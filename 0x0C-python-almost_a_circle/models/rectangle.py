@@ -80,7 +80,7 @@ class Rectangle(Base):
         for h in range(self.height):
             [print("#", end="")for w in range(self.width)]
             print("")
-    
+
     def __str__(self):
         """Returns attribues of Rectangle"""
         x = self.x
