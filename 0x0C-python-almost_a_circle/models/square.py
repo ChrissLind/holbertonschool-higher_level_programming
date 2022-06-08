@@ -61,6 +61,7 @@ class Square(Rectangle):
         return f"[Square] ({id}) {x}/{y} - {w}"
 
     def to_dictionary(self):
+        """Dictionary for the Square"""
         return {
             "id": self.id,
             "x": self.x,
