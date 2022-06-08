@@ -19,3 +19,11 @@ class Square(Rectangle):
     def size(self, value):
         self.width = value
         self.height = value
+
+    def __str__(self):
+        """Return the representation of a Square."""
+        id = self.id
+        x = self.x
+        y = self.y
+        w = self.width
+        return f"[Square] ({id}) {x}/{y} - {w}"
