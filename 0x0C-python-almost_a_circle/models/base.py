@@ -44,6 +44,6 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Dummy"""
-        Dummy = cls(1, 1, 1, 1)
+        Dummy = cls(1, 1)
         Dummy.update(**dictionary)
         return Dummy
