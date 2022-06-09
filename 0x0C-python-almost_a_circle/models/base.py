@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defines a base model class"""
+from csv import list_dialects
 import json
 
 
@@ -50,3 +51,13 @@ class Base:
             Dummy = cls(1)
         Dummy.update(**dictionary)
         return Dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, "r") as jsonfile:
+                list_dict = Base.from_json_string(jsonfile.read())
+                return [cls.create(**d) for d in list_dict]
+        except IOError:
+            return []
