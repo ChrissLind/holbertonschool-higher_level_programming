@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Same as previous task, but safe from MySQL injection"""
 
 import sys
 import MySQLdb
