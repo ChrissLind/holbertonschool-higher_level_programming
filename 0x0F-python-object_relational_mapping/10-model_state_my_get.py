@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all State objects from the database hbtn_0e_6_usa."""
+"""Lists the State object with the name passed as argument."""
 
 import sys
 from sqlalchemy import create_engine
@@ -13,5 +13,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    found = False
+    for state in session.query(State):
+        if state.name == sys.argv[4]:
+            print("{}".format(state.id))
+            found = True
+            break
+    if found is False:
+        print("Not found")
